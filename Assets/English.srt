@@ -1,0 +1,203 @@
+1
+00:00:01,080 --> 00:00:03,960
+Start at the origin. Follow the two cyan arrows.
+
+2
+00:00:04,940 --> 00:00:10,000
+One points a unit to the right. The other points a unit up.
+
+3
+00:00:10,780 --> 00:00:14,660
+What if four numbers could reshape this entire plane?
+
+4
+00:00:15,780 --> 00:00:21,000
+Watch the arrowheads move as the grid tilts around them.
+
+5
+00:00:23,220 --> 00:00:28,000
+The squares now look like thin parallelograms.
+
+6
+00:00:28,000 --> 00:00:34,000
+Here’s the puzzle. How can their shape change while their area stays the same?
+
+7
+00:00:35,410 --> 00:00:40,000
+A linear transformation is a map between vector spaces that preserves two operations.
+
+8
+00:00:40,000 --> 00:00:44,030
+First, addition. Slide the second arrow to the tip of the first.
+
+9
+00:00:44,300 --> 00:00:48,140
+The diagonal from the origin to the last arrowhead is their sum.
+
+10
+00:00:49,970 --> 00:00:53,700
+Now transform the whole path. Watch where the diagonal lands.
+
+11
+00:00:55,040 --> 00:01:02,000
+Transform each short arrow and add them head to tail. You reach exactly the same point.
+
+12
+00:01:02,880 --> 00:01:07,910
+The second rule is scaling. Here we double the length of an arrow.
+
+13
+00:01:07,910 --> 00:01:14,600
+Transform that double arrow, and you get twice the transformed arrow. The rule works for any scalar.
+
+14
+00:01:15,300 --> 00:01:20,950
+This is the matrix behind our animation. Let’s call it A.
+
+15
+00:01:20,950 --> 00:01:25,850
+We write the input as a column: horizontal steps on top, vertical steps below.
+
+16
+00:01:27,880 --> 00:01:33,870
+Start with the first basis vector. One step right, zero steps up.
+
+17
+00:01:33,870 --> 00:01:40,000
+One selects the first column of A. Zero cancels the second.
+
+18
+00:01:41,240 --> 00:01:45,080
+Follow the tip. It moves two units right and one unit up.
+
+19
+00:01:46,040 --> 00:01:51,240
+Those coordinates are exactly the entries of the first column.
+
+20
+00:01:51,950 --> 00:01:56,350
+Now start with the second basis vector: zero steps right, one step up.
+
+21
+00:01:57,410 --> 00:02:04,000
+This selects the second column. The tip lands one unit right and one unit up.
+
+22
+00:02:06,170 --> 00:02:11,000
+What about an arbitrary vector? Think of its coordinates as counts of basis steps.
+
+23
+00:02:11,000 --> 00:02:18,000
+Keep the counts. Replace the two original steps with their images, and add them together.
+
+24
+00:02:20,410 --> 00:02:25,930
+Let’s use those two steps to follow an entire unit square.
+
+25
+00:02:25,930 --> 00:02:30,640
+Mark the origin, both basis tips, and the far corner they reach together.
+
+26
+00:02:32,970 --> 00:02:38,530
+Watch each family of parallel lines tilt together as the grid changes shape.
+
+27
+00:02:38,850 --> 00:02:45,000
+The origin stays fixed. Zero steps in either direction still gives zero.
+
+28
+00:02:45,930 --> 00:02:51,000
+The far corner began at one, one. Add the two transformed basis vectors.
+
+29
+00:02:51,000 --> 00:02:56,830
+Two plus one gives three. One plus one gives two. That’s the far corner of our parallelogram.
+
+30
+00:02:59,000 --> 00:03:03,850
+Now try the vector one, two: one horizontal step and two vertical steps.
+
+31
+00:03:04,680 --> 00:03:09,190
+Under A, that means one copy of the first column and two copies of the second.
+
+32
+00:03:11,050 --> 00:03:15,000
+Trace those three steps head to tail. Where do they end?
+
+33
+00:03:15,000 --> 00:03:19,530
+Four units right and three units up. That’s the orange arrow.
+
+34
+00:03:20,740 --> 00:03:25,090
+That parallelogram looks smaller than the square. Does it actually cover less area?
+
+35
+00:03:25,870 --> 00:03:33,000
+The determinant tells us how area changes, and whether the map reverses orientation.
+
+36
+00:03:33,770 --> 00:03:39,020
+For this two-by-two matrix, multiply the main diagonal entries: two times one.
+
+37
+00:03:40,350 --> 00:03:46,000
+Then subtract the product on the other diagonal: one times one.
+
+38
+00:03:47,090 --> 00:03:49,920
+Two minus one leaves a determinant of one.
+
+39
+00:03:51,050 --> 00:03:56,230
+Its absolute value is the area scale factor. One square unit stays one square unit.
+
+40
+00:03:56,370 --> 00:03:59,850
+The edges still change length and direction.
+
+41
+00:04:00,940 --> 00:04:07,010
+Now trace the corners in order. A positive determinant keeps a counterclockwise trip counterclockwise.
+
+42
+00:04:09,010 --> 00:04:13,780
+Reflect the square across the vertical axis. The same trip now runs clockwise.
+
+43
+00:04:14,140 --> 00:04:16,740
+This reflection has determinant negative one.
+
+44
+00:04:17,990 --> 00:04:22,700
+Finally, project the square onto the horizontal axis. Watch the upper corners drop.
+
+45
+00:04:23,150 --> 00:04:28,330
+The area vanishes. A zero determinant collapses the plane to a line or even a single point.
+
+46
+00:04:30,400 --> 00:04:35,010
+Follow one arrow, and you see an input vector become an output vector.
+
+47
+00:04:35,210 --> 00:04:38,440
+Follow both basis arrows, and you can predict the whole grid.
+
+48
+00:04:39,020 --> 00:04:43,000
+The determinant gives the area scale through its magnitude, and orientation through its sign.
+
+49
+00:04:43,300 --> 00:04:47,960
+A matrix does more than multiply numbers. It transforms geometry,
+
+50
+00:04:48,370 --> 00:04:53,200
+changes directions, reshapes space, and reveals the hidden structure of linear algebra.
+
+51
+00:04:54,830 --> 00:04:58,000
+Thank you for watching.
